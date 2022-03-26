@@ -1,6 +1,7 @@
 import {useState, useEffect} from 'react'
 import axios from 'axios'
 import Link from 'next/link'
+import { GetAssetUrl } from '../utils/helper'
 
 const Evolution = ({chainURL, baseColor, pokeID}) => 
 {
@@ -46,7 +47,7 @@ const Evolution = ({chainURL, baseColor, pokeID}) =>
 							<div className='mt-8 md:mt-0 flex items-center justify-center bg-white shadow-sm cursor-pointer hover:shadow-2xl p-8 transition-shadow duration-500 rounded-md' key={id}>
 								<Link href={`/pokemon/${id}`}>
 									<div>
-										<img src={`https://raw.githubusercontent.com/HybridShivam/Pokemon/master/assets/thumbnails-compressed/${p_id}.png`} alt="evo-images" />
+										<img src={GetAssetUrl('thumbnails-compressed',`${p_id}.png`)} alt="evo-images" />
 										<h1 className={`${baseColor} px-2 py-1 mt-3 text-gray-100 text-center rounded-md tracking-wide`}>{pokemon.species_name}</h1>
 									</div>
 								</Link>
@@ -78,7 +79,7 @@ const Evolution = ({chainURL, baseColor, pokeID}) =>
 						<div className='flex justify-center my-6'>
 							<Link href={`/pokemon/${id}`} >
 								<div className='bg-white shadow-sm cursor-pointer hover:shadow-2xl p-8 transition-shadow duration-500 rounded-md'>
-									<img  src={`https://raw.githubusercontent.com/HybridShivam/Pokemon/master/assets/thumbnails-compressed/${p_id}.png`} alt="evo-images" />
+									<img  src={GetAssetUrl('thumbnails-compressed',`${p_id}.png`)} alt="evo-images" />
 									<h1 className={`${baseColor} px-2 py-1 mt-3 text-gray-100 text-center rounded-md tracking-wide`}>{chainInfo.species.name}</h1>
 								</div>
 							</Link>
@@ -90,7 +91,7 @@ const Evolution = ({chainURL, baseColor, pokeID}) =>
 								<div className='bg-white shadow-sm cursor-pointer hover:shadow-2xl p-4 mx-2 transition-shadow duration-500 rounded-md' key={id}>
 									<Link href={`/pokemon/${id}`}>
 										<div>
-											<img  src={`https://raw.githubusercontent.com/HybridShivam/Pokemon/master/assets/thumbnails-compressed/${p_id}.png`} alt="evo-images" />
+											<img  src={GetAssetUrl('thumbnails-compressed',`${p_id}.png`)} alt="evo-images" />
 											<h1 className={`${baseColor} px-2 py-1 mt-3 text-gray-100 text-center rounded-md tracking-wide`}>{e.species.name}</h1>
 										</div>
 									</Link>
@@ -110,7 +111,7 @@ const Evolution = ({chainURL, baseColor, pokeID}) =>
 						<div className='flex justify-center '>
 							<Link href={`/pokemon/${id}`} className='bg-white shadow-sm cursor-pointer hover:shadow-2xl p-8 transition-shadow duration-500 rounded-md'>
 								<div>
-									<img  src={`https://raw.githubusercontent.com/HybridShivam/Pokemon/master/assets/thumbnails-compressed/${p_id}.png`} alt="evo-images" />
+									<img  src={GetAssetUrl('thumbnails-compressed',`${p_id}.png`)} alt="evo-images" />
 									<h1 className={`${baseColor} px-2 py-1 mt-3 text-gray-100 text-center rounded-md tracking-wide`}>{chainInfo.species.name}</h1>
 								</div>
 							</Link>
@@ -122,7 +123,7 @@ const Evolution = ({chainURL, baseColor, pokeID}) =>
 								<div className='bg-white shadow-sm cursor-pointer hover:shadow-2xl p-8 transition-shadow duration-500 rounded-md' key={id}>
 									<Link href={`/pokemon/${id}`}>
 										<div>
-											<img  src={`https://raw.githubusercontent.com/HybridShivam/Pokemon/master/assets/thumbnails-compressed/${p_id}.png`} alt="evo-images" />
+											<img  src={GetAssetUrl('thumbnails-compressed',`${p_id}.png`)} alt="evo-images" />
 											<h1 className={`${baseColor} px-2 py-1 mt-3 text-gray-100 text-center rounded-md tracking-wide`}>{e.species.name}</h1>
 										</div>
 									</Link>
@@ -149,13 +150,13 @@ const Evolution = ({chainURL, baseColor, pokeID}) =>
 					<div className='flex justify-around items-center flex-col md:flex-row'>
 						<Link href={`/pokemon/${id}`}>
 							<div className='bg-white shadow-sm cursor-pointer hover:shadow-2xl p-8 transition-shadow duration-500 rounded-md'>
-								<img  src={`https://raw.githubusercontent.com/HybridShivam/Pokemon/master/assets/thumbnails-compressed/${p_id}.png`} alt="evo-images" />
+								<img  src={`https://raw.githubusercontent.com/UmerSami/Pokemon/master/assets/thumbnails-compressed/${p_id}.png`} alt="evo-images" />
 								<h1 className={`${baseColor} px-2 py-1 mt-3 text-gray-100 text-center rounded-md tracking-wide`}>{chainInfo.species.name}</h1>
 							</div>
 						</Link>
 						<Link href={`/pokemon/${secondLayer.url.split('/')[6]}`} >
 							<div className='bg-white shadow-sm cursor-pointer hover:shadow-2xl p-8 transition-shadow duration-500 rounded-md mt-4 md:mt-0'>
-								<img  src={`https://raw.githubusercontent.com/HybridShivam/Pokemon/master/assets/thumbnails-compressed/${secondLayer.url.split('/')[6].padStart(3, '0')}.png`} alt="evo-images" />
+								<img  src={`https://raw.githubusercontent.com/UmerSami/Pokemon/master/assets/thumbnails-compressed/${secondLayer.url.split('/')[6].padStart(3, '0')}.png`} alt="evo-images" />
 								<h1 className={`${baseColor} px-2 py-1 mt-3 text-gray-100 text-center rounded-md tracking-wide`}>{secondLayer.name}</h1>
 							</div>
 						</Link>
@@ -163,7 +164,7 @@ const Evolution = ({chainURL, baseColor, pokeID}) =>
 							{thirdLayer.map(e => 
 									<Link href={`/pokemon/${e.species.url.split('/')[6]}`} key={e.species.name}>
 										<div className='bg-white shadow-sm cursor-pointer hover:shadow-2xl p-8 transition-shadow duration-500 rounded-md m-6'>
-											<img  src={`https://raw.githubusercontent.com/HybridShivam/Pokemon/master/assets/thumbnails-compressed/${e.species.url.split('/')[6].padStart(3, '0')}.png`} alt="evo-images" />
+											<img  src={`https://raw.githubusercontent.com/UmerSami/Pokemon/master/assets/thumbnails-compressed/${e.species.url.split('/')[6].padStart(3, '0')}.png`} alt="evo-images" />
 											<h1 className={`${baseColor} px-2 py-1 mt-3 text-gray-100 text-center rounded-md tracking-wide`}>{e.species.name}</h1>
 										</div>
 									</Link>

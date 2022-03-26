@@ -3,6 +3,7 @@ import {useState, useEffect} from 'react'
 import { Dialog, DialogOverlay, DialogContent } from "@reach/dialog";
 import "@reach/dialog/styles.css";
 import Loader from './Loader'
+import { GetAssetUrl } from '../utils/helper';
 
 
 const Basics = ({id, name, weight, height, genus, types, abilities, fte, varieties, baseColor, isLegendary}) => 
@@ -133,7 +134,7 @@ const Basics = ({id, name, weight, height, genus, types, abilities, fte, varieti
 				</div>
 
 				<div className='w-full lg:w-4/12 h-full fade-in mt-8 lg:mt-0 px-4 lg:px-0'>
-					<img src={`https://raw.githubusercontent.com/HybridShivam/Pokemon/master/assets/images/${paddedID}${varietyToBeShown}.png`} alt="mainImage" />
+					<img src={GetAssetUrl('images',`${paddedID}${varietyToBeShown}.png`)} alt="mainImage" />
 				</div>
 
 				<div className='w-full lg:w-4/12 h-full lg:pl-12 text-center mt-8 lg:mt-0 lg:text-right leading-relaxed'>

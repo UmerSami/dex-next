@@ -15,10 +15,24 @@
 	font-display: swap;
 }
 
+@font-face{
+	font-family: 'pkmh';
+	src: url('/Pokemon-Hollow.ttf');
+
+}
+@font-face{
+	font-family: 'pkms';
+	src: url('/Pokemon-Solid.ttf');
+}
+
+.kids {
+  background-image: url('/BabaAndKids.jpg');
+  background-size:100% 100%;
+}
+
 .gn{
 	font-family: gn, "Helvetica", "Arial", sans-serif;
 }
-
 
 body{
 	font-family: gb, "Helvetica", "Arial", sans-serif;
